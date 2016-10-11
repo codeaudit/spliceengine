@@ -823,6 +823,7 @@
 				<module>hdp2.1.7</module>
 				<module>hdp2.2.4</module>
 				<module>mapr0.98.4</module>
+				<module>ddlutils</module>
 			</modules>
 		</profile>
 		<profile>
