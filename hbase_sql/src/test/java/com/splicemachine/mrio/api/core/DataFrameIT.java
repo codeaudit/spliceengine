@@ -98,6 +98,16 @@ public class DataFrameIT extends SpliceUnitTest {
                     try {
                         spliceClassWatcher.setAutoCommit(true);
 
+                        try{
+                            // drop the procedure just in case, to avoid inconsitents tests
+                            String proc = format("DROP PROCEDURE Splice.testResultSetToDF");
+                            PreparedStatement ps = spliceClassWatcher.prepareStatement(proc);
+                            ps.execute();
+
+                        }catch(Exception e){
+
+                        }
+
                         // Stored procedure returns size of dataframe
                         String proc = format("CREATE PROCEDURE Splice.testResultSetToDF(statement varchar(1024))" +
                                 "   PARAMETER STYLE JAVA " +
